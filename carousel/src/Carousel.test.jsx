@@ -99,7 +99,7 @@ test("left arrow does not appear when you are at the start", function () {
   ).toBeInTheDocument();
 
   expect(
-    container.querySelector('.bi-arrow-left-circle'),
+    container.querySelector(".bi-arrow-left-circle"),
   ).not.toBeInTheDocument();
 });
 
@@ -121,10 +121,9 @@ test("right arrow does not appear when you are at the end", function () {
   fireEvent.click(rightArrow);
 
   expect(
-    container.querySelector('.bi-arrow-right-circle'),
+    container.querySelector(".bi-arrow-right-circle"),
   ).not.toBeInTheDocument();
 });
-
 
 test("left arrow does not appear when you are at the start", function () {
   const { container } = render(
@@ -139,7 +138,7 @@ test("left arrow does not appear when you are at the start", function () {
   ).toBeInTheDocument();
 
   expect(
-    container.querySelector('.bi-arrow-left-circle'),
+    container.querySelector(".bi-arrow-left-circle"),
   ).not.toBeInTheDocument();
 });
 
@@ -151,4 +150,11 @@ test("right and left arrow does not appear when you have only 1 img", function (
     />,
   );
 
+  expect(
+    container.querySelector(".bi-arrow-left-circle"),
+  ).not.toBeInTheDocument();
+
+  expect(
+    container.querySelector(".bi-arrow-right-circle"),
+  ).not.toBeInTheDocument();
 });
