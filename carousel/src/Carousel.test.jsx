@@ -43,10 +43,45 @@ it("works when you click on the right arrow", function () {
 });
 
 test("works when you click left arrow", function () {
-  const container = render(
+  const { container } = render(
     <Carousel
       photos={TEST_IMAGES}
       title="images for testing"
     />,
   );
+
+  // expect the first image to show, but not the second
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).toBeInTheDocument();
+  expect(
+    container.querySelector('img[alt="testing image 2"]'),
+  ).not.toBeInTheDocument();
+
+  // move forward in the carousel, so that we can test to go back left
+  const rightArrow = container.querySelector(".bi-arrow-right-circle");
+  fireEvent.click(rightArrow);
+
+  // expect the second image to show, but not the first
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).not.toBeInTheDocument();
+  expect(
+    container.querySelector('img[alt="testing image 2"]'),
+  ).toBeInTheDocument();
+
+  //TODO: shouldn't this be Carousel-left?
+  //Or do we only get Carousel-??? when we actually use it in the .css file?
+
+  // move backward in the carousel, testing the left arrow
+  const leftArrow = container.querySelector(".bi-arrow-left-circle");
+  fireEvent.click(leftArrow);
+
+  // expect the first image to show, but not the second
+  expect(
+    container.querySelector('img[alt="testing image 2"]'),
+  ).not.toBeInTheDocument();
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).toBeInTheDocument();
 });
