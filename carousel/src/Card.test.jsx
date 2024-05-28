@@ -14,3 +14,15 @@ test("render without crashing", function () {
     />,
   );
 });
+
+test("matches snapshot", function () {
+  const { container } = render(
+    <Card
+      caption="hello"
+      src={image1}
+      currNum="1"
+      totalNum="1"
+    />,
+  );
+  expect(container).toMatchSnapshot();
+});
