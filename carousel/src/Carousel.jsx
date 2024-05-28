@@ -37,7 +37,7 @@ function Carousel({ photos, title }) {
       <div className="Carousel-main">
         {isNotFirstCard && (
           <i
-            className="bi bi-arrow-left-circle"
+            className="bi bi-arrow-left-circle" //TODO:add Carousel-left
             onClick={goBackward}
           />
         )}
