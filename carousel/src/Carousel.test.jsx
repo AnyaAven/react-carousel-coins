@@ -85,3 +85,70 @@ test("works when you click left arrow", function () {
     container.querySelector('img[alt="testing image 1"]'),
   ).toBeInTheDocument();
 });
+
+test("left arrow does not appear when you are at the start", function () {
+  const { container } = render(
+    <Carousel
+      photos={TEST_IMAGES}
+      title="images for testing"
+    />,
+  );
+
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).toBeInTheDocument();
+
+  expect(
+    container.querySelector('.bi-arrow-left-circle'),
+  ).not.toBeInTheDocument();
+});
+
+test("right arrow does not appear when you are at the end", function () {
+  const { container } = render(
+    <Carousel
+      photos={TEST_IMAGES}
+      title="images for testing"
+    />,
+  );
+
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).toBeInTheDocument();
+
+  // move forward in the carousel twice
+  const rightArrow = container.querySelector(".bi-arrow-right-circle");
+  fireEvent.click(rightArrow);
+  fireEvent.click(rightArrow);
+
+  expect(
+    container.querySelector('.bi-arrow-right-circle'),
+  ).not.toBeInTheDocument();
+});
+
+
+test("left arrow does not appear when you are at the start", function () {
+  const { container } = render(
+    <Carousel
+      photos={[TEST_IMAGES[0]]}
+      title="images for testing"
+    />,
+  );
+
+  expect(
+    container.querySelector('img[alt="testing image 1"]'),
+  ).toBeInTheDocument();
+
+  expect(
+    container.querySelector('.bi-arrow-left-circle'),
+  ).not.toBeInTheDocument();
+});
+
+test("right and left arrow does not appear when you have only 1 img", function () {
+  const { container } = render(
+    <Carousel
+      photos={[TEST_IMAGES[0]]}
+      title="images for testing"
+    />,
+  );
+
+});
