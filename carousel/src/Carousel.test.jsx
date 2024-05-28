@@ -158,3 +158,13 @@ test("right and left arrow does not appear when you have only 1 img", function (
     container.querySelector(".bi-arrow-right-circle"),
   ).not.toBeInTheDocument();
 });
+
+test("matches snapshot", function () {
+  const { container } = render(
+    <Carousel
+      photos={TEST_IMAGES}
+      title="images for testing"
+    />,
+  );
+  expect(container).toMatchSnapshot();
+});
