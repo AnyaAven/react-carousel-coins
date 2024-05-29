@@ -34,7 +34,7 @@ describe("FlipCoinGame works", function () {
     expect(qs(".FlipCoinGame-Data"))
       .toHaveTextContent("Total flips:0 Heads: 0 Tails: 0")
 
-    const flipBtn = qs(".FlipCoin-flip-button");
+    const flipBtn = qs(".Button");
     fireEvent.click(flipBtn);
 
     //Should have 1 coin displayed

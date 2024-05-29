@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Coin from "./Coin.jsx";
+import Button from "./Button.jsx";
 import "./FlipCoinGame.css";
 import { flipCoin } from "./flipCoin.js";
 
@@ -10,7 +11,7 @@ import { flipCoin } from "./flipCoin.js";
  * flips: {heads, tails}
  * coinState: default(null) => "heads", "tails"
  *
- * FlipCoinGame -> Coin
+ * FlipCoinGame -> Coin -> Button
  */
 function FlipCoinGame() {
   const [flips, setFlips] = useState({ heads: 0, tails: 0 });
@@ -27,12 +28,7 @@ function FlipCoinGame() {
     <div className="FlipCoinGame">
       <h1>Let's play a flip game!</h1>
       {coinState && <Coin sideShowing={coinState} />}
-      <button
-        className="FlipCoin-flip-button btn btn-primary"
-        onClick={handleFlipClick}>
-        Flip Me!
-      </button>
-
+      <Button onClick={handleFlipClick} label={"Flip me!"} />
       <p className="FlipCoinGame-Data">
         {`Total flips:${flips.heads + flips.tails}
         Heads: ${flips.heads}
