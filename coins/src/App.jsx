@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import FlipCoinGame from "./FlipCoinGame.jsx"
 
 /** Component for entire page.
  *
@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <FlipCoinGame />
     </div>
   );
 };
