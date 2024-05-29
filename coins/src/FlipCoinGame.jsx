@@ -5,11 +5,14 @@ import "./FlipCoinGame.css";
 import { flipCoin } from "./flipCoin.js";
 
 /**
- * FlipCoinGame Component that holds game state for flipping coincs
+ * FlipCoinGame Component that holds game state for flipping coins
  *
  * State:
  * flips: {heads, tails}
  * coinState: default(null) => "heads", "tails"
+ *
+ * Events:
+ * onClick: Flips coin on Button click
  *
  * FlipCoinGame -> Coin -> Button
  */
