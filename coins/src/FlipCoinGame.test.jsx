@@ -12,8 +12,6 @@ beforeAll(function () {
 });
 
 afterAll(function () {
-  // after all tests, make dice.d6 normal again
-  //  (useful if other tests need this)
   vi.restoreAllMocks();
 });
 
