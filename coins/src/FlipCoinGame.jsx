@@ -1,4 +1,6 @@
-import './FlipCoinGame.css';
+import React from "react";
+import Coin from "./Coin.jsx";
+import "./FlipCoinGame.css";
 
 /**
  * FlipCoinGame Component that holds game state for flipping coincs
@@ -7,10 +9,17 @@ import './FlipCoinGame.css';
  * flips: {heads, tails}
  *
  * FlipCoinGame -> Coin
-*/
-function FlipCoinGame(){
+ */
+function FlipCoinGame() {
+  const [coinFlips, setCoinFlip] = useState();
 
-  return (<div className='FlipCoinGame'></div>)
+  // {head: 1, tails: 0}
+  return (
+    <div className="FlipCoinGame">
+      <Coin />
+      <button class="FlipCoin-button btn btn-primary">Flip Me!</button>
+    </div>
+  );
 }
 
 export default FlipCoinGame;

@@ -1,8 +1,7 @@
 import React from "react";
 import "./Coin.css";
-import coinHeadsImg from "./headsPenny.jpg"
-import coinTailsImg from "./tailsPenny.jpg"
-
+import coinHeadsImg from "./headsPenny.jpg";
+import coinTailsImg from "./tailsPenny.jpg";
 
 const COIN_IMAGES = {
   heads: coinHeadsImg,
@@ -17,14 +16,13 @@ const COIN_IMAGES = {
  *
  */
 function Coin({ sideShowing = "heads" }) {
-
   return (
     <div className="Coin">
       <img
         className="Coin-img"
         src={COIN_IMAGES[sideShowing]}
-        alt={`Coin ${sideShowing}`}>
-      </img>
+        alt={`Coin ${sideShowing}`}
+      ></img>
     </div>
   );
 }
