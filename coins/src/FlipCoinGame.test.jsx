@@ -41,4 +41,8 @@ describe("FlipCoinGame works", function () {
     expect(qs(".Coin-img")).not.toContainHTML("headsPenny.jpg")
   });
 
+  test("matches snapshot", function () {
+    const { container } = render(<Coin sideShowing="heads" />);
+    expect(container).toMatchSnapshot();
+  });
 });

@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Coin works > matches snapshot 1`] = `
+<div>
+  <div
+    class="Coin"
+  >
+    <img
+      alt="Coin heads"
+      class="Coin-img"
+      src="/src/headsPenny.jpg"
+    />
+  </div>
+</div>
+`;

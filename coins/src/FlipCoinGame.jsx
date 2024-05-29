@@ -26,6 +26,7 @@ function FlipCoinGame() {
 
   return (
     <div className="FlipCoinGame">
+      <h1>Let's play a flip game!</h1>
       {coinState && <Coin sideShowing={coinState} />}
       <button
         className="FlipCoin-flip-button btn btn-primary"

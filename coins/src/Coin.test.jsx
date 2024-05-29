@@ -25,4 +25,9 @@ describe("Coin works", function () {
     expect(img.getAttribute("alt")).toEqual("Coin tails")
   });
 
+  test("matches snapshot", function () {
+    const { container } = render(<Coin sideShowing="heads" />);
+    expect(container).toMatchSnapshot();
+  });
+
 });
