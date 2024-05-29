@@ -1,22 +1,32 @@
 import React from "react";
 import "./Coin.css";
+import coinHeadsImg from "./headsPenny.jpg"
+import coinTailsImg from "./tailsPenny.jpg"
+
 
 const COIN_IMAGES = {
-  heads: "./image1.png",
-  tails: "./image2.png",
+  heads: coinHeadsImg,
+  tails: coinTailsImg,
 };
 
 /**
+ *  Coin Image
+ *
+ * Props:
+ * sideShowing: "heads" or "tails" (Default: heads)
  *
  */
-function Coin({ sideShowing }) {
-  //OPTION1
-  //take sideShowing, and get file from coin_images
-  // return image of coin in div
+function Coin({ sideShowing = "heads" }) {
 
   return (
-    <div>
-      <img></img>
+    <div className="Coin">
+      <img
+        className="Coin-img"
+        src={COIN_IMAGES[sideShowing]}
+        alt={`Coin ${sideShowing}`}>
+      </img>
     </div>
   );
 }
+
+export default Coin;
