@@ -31,7 +31,7 @@ function FlipCoinGame() {
     <div className="FlipCoinGame">
       <h1>Let's play a flip game!</h1>
       {coinState && <Coin sideShowing={coinState} />}
-      <Button onClick={handleFlipClick} label={"Flip me!"} />
+      <Button onClick={handleFlipClick} >Flip me!</Button>
       <p className="FlipCoinGame-Data">
         {`Total flips:${flips.heads + flips.tails}
         Heads: ${flips.heads}

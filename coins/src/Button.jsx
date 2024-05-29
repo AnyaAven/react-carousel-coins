@@ -5,17 +5,17 @@ import "./Button.css";
  *
  * Props:
  * onClick: function
- * label: String
+ * children: ReactNode
  *
  * Events:
  * onClick
  */
-function Button({ onClick, label }) {
+function Button({ onClick, children }) {
   return (
     <button
         className="Button btn btn-primary"
         onClick={onClick}>
-      <p className="Button-label">{label}</p>
+      <p className="Button-label">{children}</p>
     </button>
 );
 }
