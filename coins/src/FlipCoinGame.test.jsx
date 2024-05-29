@@ -23,9 +23,9 @@ describe("FlipCoinGame works", function () {
     render(<FlipCoinGame />);
   });
 
-  test("renders 1 coin", function () {
-    const { container } = render(<Coin />);
-    expect(container.querySelectorAll(".Coin").length).toEqual(1);
+  test("renders no coins at the start", function () {
+    const { container } = render(<FlipCoinGame />);
+    expect(container.querySelectorAll(".Coin").length).toEqual(0);
   });
 
   test("Flips coin on button click", function () {
@@ -33,10 +33,18 @@ describe("FlipCoinGame works", function () {
     const { container } = render(<FlipCoinGame />);
     const qs = container.querySelector.bind(container);
 
+    expect(qs(".FlipCoinGame-Data"))
+      .toHaveTextContent("Total flips:0 Heads: 0 Tails: 0")
+
     const flipBtn = qs(".FlipCoin-flip-button");
     fireEvent.click(flipBtn);
 
+    //Should have 1 coin displayed
+    expect(container.querySelectorAll(".Coin").length).toEqual(1);
+
     //expect the coin the be tails
+    expect(qs(".FlipCoinGame-Data"))
+      .toHaveTextContent("Total flips:1 Heads: 0 Tails: 1")
     expect(qs(".Coin-img")).toContainHTML("tailsPenny.jpg")
     expect(qs(".Coin-img")).not.toContainHTML("headsPenny.jpg")
   });
