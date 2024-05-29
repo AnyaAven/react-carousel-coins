@@ -13,7 +13,7 @@ import "./Button.css";
 function Button({ onClick, label }) {
   return (
     <button
-        className="Button"
+        className="Button btn btn-primary"
         onClick={onClick}>
       <p className="Button-label">{label}</p>
     </button>
