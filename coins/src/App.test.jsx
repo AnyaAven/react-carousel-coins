@@ -3,4 +3,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 
 import App from './App.jsx';
 
-test()
+test("renders without crashing", function () {
+  render(<App/>);
+});
