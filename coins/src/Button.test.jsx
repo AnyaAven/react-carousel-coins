@@ -20,7 +20,7 @@ test("Button clicks with passed in func and label", function () {
   const { container } = render(
     <Button
       onClick={testCommon.testFunction}
-      label={"label"} />
+    >label</Button>
   );
   const qs = container.querySelector.bind(container);
 
