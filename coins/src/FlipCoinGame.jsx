@@ -18,10 +18,9 @@ function FlipCoinGame() {
 
   function handleFlipClick(evt) {
     const flipResult = flipCoin() === 0 ? "tails" : "heads";
-    const nextFlips = { ...flips };
-    nextFlips[flipResult] += 1;
+
     setCoinState(flipResult);
-    setFlips(nextFlips);
+    setFlips(curr => ({...curr, [flipResult]: curr[flipResult] + 1}));
   }
 
   return (
